@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import butterknife.BindView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
 
 
     @Override
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
 
     }
 }
