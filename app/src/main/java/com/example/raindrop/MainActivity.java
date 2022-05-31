@@ -2,14 +2,13 @@ package com.example.raindrop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
 
 
     }
