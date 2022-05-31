@@ -2,6 +2,7 @@ package com.example.raindrop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText mPassword;
     @BindView(R.id.loginButton)
     MaterialButton mLoginButton;
+
 
 
 
@@ -43,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
            }else
                //incorrect
                Toast.makeText(this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
+
 
     }
 
