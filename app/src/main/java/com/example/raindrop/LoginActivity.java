@@ -33,10 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
+
 
     @Override
     public void onClick(View v) {
@@ -47,5 +44,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                //incorrect
                Toast.makeText(this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
 
+    }
+
+
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
