@@ -40,7 +40,7 @@ public class FtActivity extends AppCompatActivity {
 
 
 
-        FtAdapter adapter = new FtAdapter(this, android.R.layout.simple_list_item_1, countries);
+        FtAdapter adapter = new FtAdapter(this, Countries);
         mListView.setAdapter(adapter);
 
 
