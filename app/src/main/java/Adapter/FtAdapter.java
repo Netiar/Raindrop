@@ -10,16 +10,18 @@ import android.widget.BaseAdapter;
 import com.example.raindrop.FtActivity;
 
 public class FtAdapter extends BaseAdapter {
+    private Context mContext;
+    private String[] mCountries;
 
 
-    public FtAdapter(Context ctx, String[] countries) {
-        this.ctx = ctx;
-        this.countries = countries;
+    public FtAdapter(Context mContext, String[] countries) {
+        this.mContext = mContext;
+        this.mCountries = mCountries;
     }
 
     @Override
     public int getCount() {
-        return countries.length;
+        return mCountries.length;
     }
 
     @Override
@@ -34,6 +36,7 @@ public class FtAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
 
         return convertView;
     }
