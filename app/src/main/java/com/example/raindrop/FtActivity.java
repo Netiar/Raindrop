@@ -49,7 +49,6 @@ public class FtActivity extends AppCompatActivity {
             }
         });
 
-
         mListView = (ListView) findViewById(R.id.listView);
         mCountryTextView = (TextView) findViewById(R.id.countryTextView);
         mCountryTextView.setText(country);

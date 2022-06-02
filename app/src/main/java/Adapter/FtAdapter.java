@@ -12,11 +12,13 @@ import com.example.raindrop.FtActivity;
 public class FtAdapter extends BaseAdapter {
     private Context mContext;
     private String[] mCountries;
+    private String[] mLeagues;
 
 
     public FtAdapter(Context mContext, int simple_list_item_1, String[] countries) {
         this.mContext = mContext;
         this.mCountries = mCountries;
+        this.mLeagues = mLeagues;
     }
 
     @Override
