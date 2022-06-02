@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="nameEditText" type="id">1</item>
-    <item name="passwordEditText" type="id">1</item>
-    <item name="loginButton" type="id">1</item>
-    <item name="listView" type="id">7</item>
-    <item name="countryTextView" type="id">7</item>
+    <item name="nameEditText" type="id"></item>
+    <item name="passwordEditText" type="id"></item>
+    <item name="loginButton" type="id"></item>
+    <item name="listView" type="id"></item>
+    <item name="countryTextView" type="id"></item>
+    <item name="clickButton" type="id"></item>
 </resources>

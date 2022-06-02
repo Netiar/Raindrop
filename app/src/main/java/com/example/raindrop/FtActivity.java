@@ -22,7 +22,7 @@ public class FtActivity extends AppCompatActivity {
     private String[] Countries = new String[] {"England", "Spain", "Italy", "Germany", "France", "Portugal", "Scotland"};
     private Object countries;
 
-//    private String[] mLeagues = {"Premier League", "La liga", "Serie A", "Bundesliga", "Ligue 1", "Primeira Liga", "Scottish Premiership"};
+    private String[] mLeagues = {"Premier League", "La liga", "Serie A", "Bundesliga", "Ligue 1", "Primeira Liga", "Scottish Premiership"};
 
 
 
@@ -37,10 +37,7 @@ public class FtActivity extends AppCompatActivity {
         mCountryTextView.setText("Here are all the countries." );
 
 
-
-
-
-        FtAdapter adapter = new FtAdapter(this, Countries);
+        FtAdapter adapter = new FtAdapter(this, android.R.layout.simple_list_item_1 ,Countries);
         mListView.setAdapter(adapter);
 
 
@@ -56,9 +53,6 @@ public class FtActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.listView);
         mCountryTextView = (TextView) findViewById(R.id.countryTextView);
         mCountryTextView.setText(country);
-
-
-
 
     }
 }

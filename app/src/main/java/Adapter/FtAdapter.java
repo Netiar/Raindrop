@@ -14,7 +14,7 @@ public class FtAdapter extends BaseAdapter {
     private String[] mCountries;
 
 
-    public FtAdapter(Context mContext, String[] countries) {
+    public FtAdapter(Context mContext, int simple_list_item_1, String[] countries) {
         this.mContext = mContext;
         this.mCountries = mCountries;
     }
