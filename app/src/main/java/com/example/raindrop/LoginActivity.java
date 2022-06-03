@@ -42,6 +42,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        if(mName.getText().toString().equals("admin") && mPassword.getText().toString().equals("admin")){
             //correct
             Toast.makeText(this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginActivity.this, FtActivity.class);
+            intent.putExtra("countries", "England"); // put extra data in the intent
+            startActivity(intent);
            }else
                //incorrect
                Toast.makeText(this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
