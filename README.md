@@ -1,5 +1,5 @@
 
-#### <span style="color:white">Contributors</span>
+#### <span style="color:white">By</span>
  * Collins Odinga Netia
  
 ## Raindrop
