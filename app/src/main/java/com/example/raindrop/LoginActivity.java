@@ -4,59 +4,66 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.raindrop.databinding.ActivityLoginBinding;
+
 import com.google.android.material.button.MaterialButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    @BindView(R.id.nameEditText)
+
+    @BindView(R.id.username)
     EditText mName;
-    @BindView(R.id.passwordEditText)
+    @BindView(R.id.password)
     EditText mPassword;
-    @BindView(R.id.loginButton)
+    @BindView(R.id.loginbtn)
     MaterialButton mLoginButton;
-
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         ButterKnife.bind(this);
 
         mLoginButton.setOnClickListener(this);
 
-    }
 
+    }
 
 
     @Override
     public void onClick(View v) {
-       if(mName.getText().toString().equals("admin") && mPassword.getText().toString().equals("admin")){
-            //correct
-            Toast.makeText(this,"LOGIN SUCCESSFUL",Toast.LENGTH_SHORT).show();
+        if(TextUtils.isEmpty(mName.getText().toString())){
+            mName.setError("Name is Required");
+        }else if(TextUtils.isEmpty(mPassword.getText().toString())){
+            mPassword.setError("Name is Required");
+        }else {
+            //capture the user input data
+            String name = mName.getText().toString();
+            String password = mPassword.getText().toString();
+
             Intent intent = new Intent(LoginActivity.this, FtActivity.class);
-            intent.putExtra("countries", "England"); // put extra data in the intent
+            intent.putExtra("name", name);
+            intent.putExtra("password", password);
+
             startActivity(intent);
-           }
-       else
-               //incorrect
-               Toast.makeText(this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
 
     }
 
 
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
-}
+
+
