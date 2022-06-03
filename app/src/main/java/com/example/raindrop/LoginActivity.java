@@ -45,7 +45,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(LoginActivity.this, FtActivity.class);
             intent.putExtra("countries", "England"); // put extra data in the intent
             startActivity(intent);
-           }else
+           }
+       else
                //incorrect
                Toast.makeText(this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
 
