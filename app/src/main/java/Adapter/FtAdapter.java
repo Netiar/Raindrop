@@ -21,6 +21,8 @@ public class FtAdapter extends BaseAdapter {
         this.mLeagues = mLeagues;
     }
 
+
+
     @Override
     public int getCount() {
         return mCountries.length;
@@ -28,7 +30,9 @@ public class FtAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        String country = mCountries[position];
+        String league = mLeagues[position];
+        return String.format("%s \nGreat football leagues: %s", country, league);
     }
 
     @Override
