@@ -28,20 +28,16 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
 
 
-        mClickButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String mName = mTextView.getText().toString();
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.putExtra("mName", mName);
-                startActivity(intent);
-            }
-        });
+        mClickButton.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
+        if (v == mClickButton) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
 
     }
 }
