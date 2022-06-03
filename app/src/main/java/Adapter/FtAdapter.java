@@ -3,30 +3,27 @@ package Adapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
 
 
 import com.example.raindrop.FtActivity;
 
-public class FtAdapter extends BaseAdapter {
+public class FtAdapter extends ArrayAdapter {
     private Context mContext;
     private String[] mCountries;
     private String[] mLeagues;
 
 
     public FtAdapter(Context mContext, int simple_list_item_1, String[] countries) {
+        super(mContext, simple_list_item_1, countries);
         this.mContext = mContext;
         this.mCountries = mCountries;
         this.mLeagues = mLeagues;
     }
 
 
-
-    @Override
-    public int getCount() {
-        return mCountries.length;
-    }
 
     @Override
     public Object getItem(int position) {
@@ -36,14 +33,7 @@ public class FtAdapter extends BaseAdapter {
     }
 
     @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-
-        return convertView;
+    public int getCount() {
+        return mCountries.length;
     }
 }
