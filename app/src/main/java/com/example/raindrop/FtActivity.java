@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,14 +17,12 @@ import butterknife.ButterKnife;
 
 public class FtActivity extends AppCompatActivity {
 
-    @BindView(R.id.countryTextView) TextView mCountryTextView;
-    @BindView(R.id.listView) ListView mListView;
+//    @BindView(R.id.listView)
+//    ListView mListView;
 
     private String[] Countries = new String[] {"England", "Spain", "Italy", "Germany", "France", "Portugal", "Scotland"};
-    private Object countries;
-
     private String[] mLeagues = {"Premier League", "La liga", "Serie A", "Bundesliga", "Ligue 1", "Primeira Liga", "Scottish Premiership"};
-
+    private ListView mListView;
 
 
 
@@ -32,26 +31,29 @@ public class FtActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ft);
         ButterKnife.bind(this);
 
-        Intent intent= getIntent();
-        String country = intent.getStringExtra("country");
-        mCountryTextView.setText("Here are all the countries." );
 
 
-        FtAdapter adapter = new FtAdapter(this, android.R.layout.simple_list_item_1 ,Countries);
+
+        mListView = (ListView) findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Countries);
         mListView.setAdapter(adapter);
 
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String country = ((TextView)view).getText().toString();
-                Toast.makeText(FtActivity.this, country, Toast.LENGTH_LONG).show();
-            }
+
+
+        mListView.setOnItemClickListener((parent, view, position, id) -> {
+            String item = ((TextView) view).getText().toString();
+            Toast.makeText(FtActivity.this, item, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(FtActivity.this, FtActivity.class);
+            intent.putExtra("country", item);
+            startActivity(intent);
         });
 
-        mListView = (ListView) findViewById(R.id.listView);
-        mCountryTextView = (TextView) findViewById(R.id.countryTextView);
-        mCountryTextView.setText(country);
+
+
+
+
+
 
 
 
