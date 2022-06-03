@@ -44,14 +44,16 @@ public class FtActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String restaurant = ((TextView)view).getText().toString();
-                Toast.makeText(FtActivity.this, restaurant, Toast.LENGTH_LONG).show();
+                String country = ((TextView)view).getText().toString();
+                Toast.makeText(FtActivity.this, country, Toast.LENGTH_LONG).show();
             }
         });
 
         mListView = (ListView) findViewById(R.id.listView);
         mCountryTextView = (TextView) findViewById(R.id.countryTextView);
         mCountryTextView.setText(country);
+
+
 
     }
 }
