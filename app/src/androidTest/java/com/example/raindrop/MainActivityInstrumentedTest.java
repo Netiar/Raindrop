@@ -26,10 +26,10 @@ public class MainActivityInstrumentedTest {
     public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
 
 
-//    @Test
-//    public void validateButton() {
-//        onView(ViewMatchers.withId(R.id.button)).perform(click());
-//    }
+    @Test
+    public void validateButton() {
+        onView(ViewMatchers.withId(R.id.button)).perform(click());
+    }
 
 
 
