@@ -35,6 +35,9 @@ android {
             animationsDisabled = true
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'API_KEY', ApiKey
+    }
 
 }
 
