@@ -1,14 +1,11 @@
 package com.example.raindrop.fragments;
 
-import android.app.appsearch.SearchResults;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,7 +15,6 @@ import android.widget.Button;
 import android.widget.SearchView;
 
 
-import com.example.raindrop.Constants;
 import com.example.raindrop.FtActivity;
 import com.example.raindrop.R;
 import com.example.raindrop.models.Leagues;
@@ -26,6 +22,7 @@ import com.example.raindrop.network.ElenaApi;
 import com.example.raindrop.network.ElenaClient;
 
 import java.io.IOException;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -83,11 +80,11 @@ public class LeagueFragment extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<Leagues> call = elenaApi.getLeagues(searchView.getQuery().toString());
-                call.enqueue(new Callback<Leagues>() {
+                Call<List<Leagues>> call = elenaApi.getLeagues(searchView.getQuery().toString());
+                call.enqueue(new Callback<List<Leagues>>() {
 
                     @Override
-                    public void onResponse(Call<Leagues> call, Response<Leagues> response) {
+                    public void onResponse(Call<List<Leagues>> call, Response<List<Leagues>> response) {
                         Intent intent = new Intent(getContext(), FtActivity.class);
                         intent.putExtra("Response", String.valueOf(response.body()));
                         startActivity(intent);
@@ -95,11 +92,9 @@ public class LeagueFragment extends Fragment {
                     }
 
                     @Override
-                    public void onFailure(Call<Leagues> call, Throwable t) {
+                    public void onFailure(Call<List<Leagues>> call, Throwable t) {
 
                     }
-
-
 
 
                 });

@@ -43,7 +43,6 @@ public class ElenaClient {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(Constants.BASE_URL)
-                    .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
