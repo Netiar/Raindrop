@@ -1,7 +1,31 @@
 package com.example.raindrop;
 
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import android.content.Intent;
 import android.os.Bundle;
+
+
+import com.example.raindrop.Adapter.ElenaPagerAdapter;
+import com.example.raindrop.fragments.LeagueFragment;
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,8 +37,11 @@ import butterknife.ButterKnife;
 
 public class FtActivity extends AppCompatActivity {
 
-//    @BindView(R.id.listView)
-//    ListView mListView;
+
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
+    @BindView(R.id.tab_layout)
+    TabLayout tabLayout;
 
     private String[] Countries = new String[] {"England", "Spain", "Italy", "Germany", "France", "Portugal", "Scotland"};
     private String[] mLeagues = {"Premier League", "La liga", "Serie A", "Bundesliga", "Ligue 1", "Primeira Liga", "Scottish Premiership"};
@@ -28,13 +55,9 @@ public class FtActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-
-
         mListView = (ListView) findViewById(R.id.listView);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Countries);
         mListView.setAdapter(adapter);
-
-
 
 
         mListView.setOnItemClickListener((parent, view, position, id) -> {
@@ -45,13 +68,19 @@ public class FtActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-
-
-
-
-
-
+        tabLayout.setupWithViewPager(viewPager);
+        List<Fragment> fragments = new ArrayList<>();
+        List<String> titles = new ArrayList<>();
+        fragments.add(LeagueFragment.newInstance());
 
     }
+
+
+
+
+
+
+
+
+
 }
