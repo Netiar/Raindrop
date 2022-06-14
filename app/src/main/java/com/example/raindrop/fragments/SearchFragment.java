@@ -1,6 +1,5 @@
 package com.example.raindrop.fragments;
 
-import android.app.appsearch.SearchResults;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -18,20 +17,15 @@ import android.widget.SearchView;
 import com.example.raindrop.models.Response;
 
 
-import com.example.raindrop.Constants;
 import com.example.raindrop.R;
-import com.example.raindrop.SearchPrediction;
+import com.example.raindrop.ui.SearchPrediction;
 import com.example.raindrop.network.FpApi;
 import com.example.raindrop.network.FpClient;
-
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
-
-import retrofit2.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
