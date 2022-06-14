@@ -4,6 +4,7 @@ package com.example.raindrop;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -39,9 +40,12 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 
 public class FtActivity extends AppCompatActivity {
+
+    @BindView(R.id.lvp) RecyclerView lvp;
+    RecyclerView.LayoutManager predictor=new LinearLayoutManager(this);
+    FtRecyclerViewAdapter adapter;
     Button get_data;
     EditText edit_text1;
-    ListView lvp;
     List<Datum> data;
 
 
@@ -52,10 +56,13 @@ public class FtActivity extends AppCompatActivity {
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_ft);
+         ButterKnife.bind(this);
 
          get_data=findViewById(R.id.get_data);
          edit_text1=findViewById(R.id.edit_text1);
          lvp=findViewById(R.id.lvp);
+
+
 
          get_data.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +70,7 @@ public class FtActivity extends AppCompatActivity {
             Toast.makeText(FtActivity.this, "clicked", Toast.LENGTH_SHORT).show();
               }
             });
-         ButterKnife.bind(this);
+
 
 
 
@@ -75,6 +82,10 @@ public class FtActivity extends AppCompatActivity {
                                  if (response.isSuccessful()) {
                                      Response response1 = response.body();
                                       data = response1.getData();
+                                      adapter = new FtRecyclerViewAdapter(FtActivity.this, data);
+                                      lvp.setAdapter(adapter);
+                                        lvp.setLayoutManager(predictor);
+                                        lvp.setHasFixedSize(true);
                                  }
 
                              }
