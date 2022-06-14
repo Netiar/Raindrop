@@ -27,7 +27,7 @@ public class SearchPrediction extends AppCompatActivity {
         response = (Response) getIntent().getSerializableExtra("Response");
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         searchResults.setLayoutManager(gridLayoutManager);
-        searchResults.setAdapter(new FtRecyclerViewAdapter( ));
+        searchResults.setAdapter(new FtRecyclerViewAdapter( this, response.getData()));
 
 
     }
