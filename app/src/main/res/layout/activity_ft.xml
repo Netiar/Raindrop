@@ -1,68 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/Bisque"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Bisque"
     tools:context=".FtActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Bisque"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Leagues" />
-
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
-
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/get_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="15dp"
-        android:fontFamily="@font/black_ops_one"
-        android:gravity="center"
-        android:text="Countries with major Leagues "
-        android:textSize="20dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="157dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="Get Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edit_text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Prediction"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_data" />
+
+    <ListView
+        android:id="@+id/lvp"
+        android:layout_width="409dp"
+        android:layout_height="588dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:foregroundGravity="center"
-        android:textAlignment="center"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text1" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
