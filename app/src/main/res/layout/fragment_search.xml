@@ -48,7 +48,7 @@
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/football_64"
+        android:src="@drawable/blackfootball"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
