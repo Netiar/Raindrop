@@ -1,39 +1,32 @@
 
-package com.example.raindrop.models;
+package com.example;
 
 import java.util.List;
-
-
-
+import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
-public class Leagues {
+@Generated("jsonschema2pojo")
+public class Response {
 
     @SerializedName("data")
     @Expose
     private List<Datum> data = null;
-    @SerializedName("pagination")
-    @Expose
-    private Pagination pagination;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public Leagues() {
+    public Response() {
     }
 
     /**
      * 
-     * @param pagination
      * @param data
      */
-    public Leagues(List<Datum> data, Pagination pagination) {
+    public Response(List<Datum> data) {
         super();
         this.data = data;
-        this.pagination = pagination;
     }
 
     public List<Datum> getData() {
@@ -42,14 +35,6 @@ public class Leagues {
 
     public void setData(List<Datum> data) {
         this.data = data;
-    }
-
-    public Pagination getPagination() {
-        return pagination;
-    }
-
-    public void setPagination(Pagination pagination) {
-        this.pagination = pagination;
     }
 
 }

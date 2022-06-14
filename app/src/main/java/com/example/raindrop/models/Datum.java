@@ -1,31 +1,58 @@
 
-package com.example.raindrop.models;
+package com.example;
 
-
+import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
+@Generated("jsonschema2pojo")
 public class Datum {
 
+    @SerializedName("home_team")
+    @Expose
+    private String homeTeam;
+    @SerializedName("away_team")
+    @Expose
+    private String awayTeam;
     @SerializedName("id")
     @Expose
     private Integer id;
-    @SerializedName("idCountry")
+    @SerializedName("market")
     @Expose
-    private Integer idCountry;
-    @SerializedName("countryName")
+    private String market;
+    @SerializedName("competition_name")
     @Expose
-    private String countryName;
-    @SerializedName("name")
+    private String competitionName;
+    @SerializedName("prediction")
     @Expose
-    private String name;
-    @SerializedName("nationalLeague")
+    private String prediction;
+    @SerializedName("competition_cluster")
     @Expose
-    private Boolean nationalLeague;
-    @SerializedName("clubsLeague")
+    private String competitionCluster;
+    @SerializedName("status")
     @Expose
-    private Boolean clubsLeague;
+    private String status;
+    @SerializedName("federation")
+    @Expose
+    private String federation;
+    @SerializedName("is_expired")
+    @Expose
+    private Boolean isExpired;
+    @SerializedName("season")
+    @Expose
+    private String season;
+    @SerializedName("result")
+    @Expose
+    private String result;
+    @SerializedName("start_date")
+    @Expose
+    private String startDate;
+    @SerializedName("last_update_at")
+    @Expose
+    private String lastUpdateAt;
+    @SerializedName("odds")
+    @Expose
+    private Odds odds;
 
     /**
      * No args constructor for use in serialization
@@ -36,21 +63,55 @@ public class Datum {
 
     /**
      * 
-     * @param name
+     * @param federation
+     * @param awayTeam
+     * @param competitionName
+     * @param market
+     * @param result
+     * @param competitionCluster
+     * @param odds
+     * @param prediction
+     * @param homeTeam
+     * @param season
      * @param id
-     * @param countryName
-     * @param clubsLeague
-     * @param idCountry
-     * @param nationalLeague
+     * @param lastUpdateAt
+     * @param isExpired
+     * @param startDate
+     * @param status
      */
-    public Datum(Integer id, Integer idCountry, String countryName, String name, Boolean nationalLeague, Boolean clubsLeague) {
+    public Datum(String homeTeam, String awayTeam, Integer id, String market, String competitionName, String prediction, String competitionCluster, String status, String federation, Boolean isExpired, String season, String result, String startDate, String lastUpdateAt, Odds odds) {
         super();
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
         this.id = id;
-        this.idCountry = idCountry;
-        this.countryName = countryName;
-        this.name = name;
-        this.nationalLeague = nationalLeague;
-        this.clubsLeague = clubsLeague;
+        this.market = market;
+        this.competitionName = competitionName;
+        this.prediction = prediction;
+        this.competitionCluster = competitionCluster;
+        this.status = status;
+        this.federation = federation;
+        this.isExpired = isExpired;
+        this.season = season;
+        this.result = result;
+        this.startDate = startDate;
+        this.lastUpdateAt = lastUpdateAt;
+        this.odds = odds;
+    }
+
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public void setHomeTeam(String homeTeam) {
+        this.homeTeam = homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
+    public void setAwayTeam(String awayTeam) {
+        this.awayTeam = awayTeam;
     }
 
     public Integer getId() {
@@ -61,44 +122,100 @@ public class Datum {
         this.id = id;
     }
 
-    public Integer getIdCountry() {
-        return idCountry;
+    public String getMarket() {
+        return market;
     }
 
-    public void setIdCountry(Integer idCountry) {
-        this.idCountry = idCountry;
+    public void setMarket(String market) {
+        this.market = market;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getCompetitionName() {
+        return competitionName;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCompetitionName(String competitionName) {
+        this.competitionName = competitionName;
     }
 
-    public String getName() {
-        return name;
+    public String getPrediction() {
+        return prediction;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPrediction(String prediction) {
+        this.prediction = prediction;
     }
 
-    public Boolean getNationalLeague() {
-        return nationalLeague;
+    public String getCompetitionCluster() {
+        return competitionCluster;
     }
 
-    public void setNationalLeague(Boolean nationalLeague) {
-        this.nationalLeague = nationalLeague;
+    public void setCompetitionCluster(String competitionCluster) {
+        this.competitionCluster = competitionCluster;
     }
 
-    public Boolean getClubsLeague() {
-        return clubsLeague;
+    public String getStatus() {
+        return status;
     }
 
-    public void setClubsLeague(Boolean clubsLeague) {
-        this.clubsLeague = clubsLeague;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getFederation() {
+        return federation;
+    }
+
+    public void setFederation(String federation) {
+        this.federation = federation;
+    }
+
+    public Boolean getIsExpired() {
+        return isExpired;
+    }
+
+    public void setIsExpired(Boolean isExpired) {
+        this.isExpired = isExpired;
+    }
+
+    public String getSeason() {
+        return season;
+    }
+
+    public void setSeason(String season) {
+        this.season = season;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getLastUpdateAt() {
+        return lastUpdateAt;
+    }
+
+    public void setLastUpdateAt(String lastUpdateAt) {
+        this.lastUpdateAt = lastUpdateAt;
+    }
+
+    public Odds getOdds() {
+        return odds;
+    }
+
+    public void setOdds(Odds odds) {
+        this.odds = odds;
     }
 
 }

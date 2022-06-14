@@ -16,6 +16,11 @@ public class ElenaPagerAdapter extends FragmentPagerAdapter {
         super(fm, behavior);
     }
 
+    public ElenaPagerAdapter(FragmentManager supportFragmentManager) {
+        super(supportFragmentManager);
+    }
+
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
