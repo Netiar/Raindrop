@@ -1,12 +1,14 @@
 
-package com.example;
+package com.example.raindrop.models;
 
-import javax.annotation.Generated;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
-public class Datum {
+import java.io.Serializable;
+
+
+public class Datum implements Serializable {
 
     @SerializedName("home_team")
     @Expose
