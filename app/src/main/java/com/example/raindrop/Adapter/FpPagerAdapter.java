@@ -7,21 +7,18 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-public class ElenaPagerAdapter extends FragmentPagerAdapter {
+public class FpPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;
     private List<String> titles;
 
 
-    public ElenaPagerAdapter(@NonNull FragmentManager fm, int behavior, List<Fragment> fragments, List<String> titles) {
+    public FpPagerAdapter(@NonNull FragmentManager fm, int behavior, List<Fragment> fragments, List<String> titles) {
         super(fm, behavior);
+        this.fragments = fragments;
+        this.titles = titles;
+
     }
 
-    public ElenaPagerAdapter(FragmentManager supportFragmentManager) {
-        super(supportFragmentManager);
-    }
-
-
-    @NonNull
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
@@ -30,5 +27,10 @@ public class ElenaPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return fragments.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return titles.get(position);
     }
 }
