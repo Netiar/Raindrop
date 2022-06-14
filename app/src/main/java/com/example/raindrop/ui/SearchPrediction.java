@@ -1,4 +1,4 @@
-package com.example.raindrop;
+package com.example.raindrop.ui;
 
 import android.os.Bundle;
 
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.raindrop.Adapter.FtRecyclerViewAdapter;
+import com.example.raindrop.R;
 import com.example.raindrop.models.Response;
 
 import butterknife.BindView;
