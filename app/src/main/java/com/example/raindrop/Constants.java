@@ -1,7 +1,9 @@
 package com.example.raindrop;
 
+
+
 public class Constants {
-    public static final String BASE_URL = "https://football.elenasport.io/v2/";
-    public static final String AUTHORIZATION = "***access_token***";
+    public static final String BASE_URL = "https://football-prediction-api.p.rapidapi.com/api/v2/";
+    public static final String X_RAPIDAPI_KEY =BuildConfig.X_API_Key;
 
 }
