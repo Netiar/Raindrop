@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -28,10 +29,13 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
     private Context context;
     private List<Datum> list;
 
-    public FtRecyclerViewAdapter() {
+    public FtRecyclerViewAdapter(Context context, List<Datum> list) {
+
         this.context = context;
         this.list = list;
     }
+
+
 
     @NonNull
     @Override
@@ -43,9 +47,11 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-
-
+        holder.bindData(list.get(position));
     }
+
+
+
 
     @Override
     public int getItemCount() {
@@ -54,11 +60,24 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
 
 
     class MyHolder extends RecyclerView.ViewHolder {
+        TextView homeTeam, awayTeam, competition, federation;
 
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
+            homeTeam = itemView.findViewById(R.id.home_team);
+            awayTeam = itemView.findViewById(R.id.away_team);
+            competition = itemView.findViewById(R.id.competition);
+            federation = itemView.findViewById(R.id.federation);
+        }
+
+        public void bindData(Datum datum) {
+            homeTeam.setText(datum.getHomeTeam());
+            awayTeam.setText(datum.getAwayTeam());
+            competition.setText(datum.getCompetitionCluster());
+            federation.setText(datum.getFederation());
         }
     }
 
-}
+
+    }
