@@ -80,4 +80,4 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
     }
 
 
-    }
+ }
