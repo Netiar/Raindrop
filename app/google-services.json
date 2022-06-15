@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "736994642963",
+    "project_id": "raindrop-1234",
+    "storage_bucket": "raindrop-1234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736994642963:android:7a285739fddeba4ecc43e6",
+        "android_client_info": {
+          "package_name": "com.example.raindrop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736994642963-hesbqqomrhcs1dfhe9rbu5c7l3lqorqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByb5qQGCQIug2e2DQLq1L0bLvKAZFwkNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736994642963-hesbqqomrhcs1dfhe9rbu5c7l3lqorqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
