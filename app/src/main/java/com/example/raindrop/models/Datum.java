@@ -98,6 +98,7 @@ public class Datum implements Serializable {
         this.startDate = startDate;
         this.lastUpdateAt = lastUpdateAt;
         this.odds = odds;
+
     }
 
     public String getHomeTeam() {
@@ -219,5 +220,8 @@ public class Datum implements Serializable {
     public void setOdds(Odds odds) {
         this.odds = odds;
     }
+
+
+
 
 }
