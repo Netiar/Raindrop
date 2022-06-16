@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.raindrop.ui.Create;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -35,7 +37,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v == mClickButton) {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, Create.class);
             startActivity(intent);
         }
 
