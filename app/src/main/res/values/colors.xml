@@ -8,5 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Bisque">#EDB714</color>
+    <color name="Coral">#F8BB3E</color>
     <color name="gray_200"> #9F9D9D</color>
+
 </resources>

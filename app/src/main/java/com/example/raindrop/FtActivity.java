@@ -9,13 +9,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +46,8 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 
 public class FtActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @BindView(R.id.lvp) RecyclerView lvp;
     RecyclerView.LayoutManager predictor=new LinearLayoutManager(this);
@@ -47,8 +55,6 @@ public class FtActivity extends AppCompatActivity {
     Button get_data;
     EditText edit_text1;
     List<Datum> data;
-
-
 
 
 
@@ -115,6 +121,50 @@ public class FtActivity extends AppCompatActivity {
 
 
      }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+       getMenuInflater().inflate(R.menu.menu,menu);
+
+       MenuItem menuItem=menu.findItem(R.id.search);
+       SearchView searchView= (SearchView) menuItem.getActionView();
+       searchView.setQueryHint("Search");
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+              @Override
+              public boolean onQueryTextSubmit(String data) {
+                  addToSharedPreferences(data);
+                  getPrediction(data);
+
+                  return false;
+
+              }
+
+              @Override
+              public boolean onQueryTextChange(String newText) {
+                return false;
+              }
+         });
+
+      return true ;
+    }
+
+
+
+
+    private void getPrediction(String data) {
+    }
+
+    private void addToSharedPreferences(String data) {
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onResume() {
