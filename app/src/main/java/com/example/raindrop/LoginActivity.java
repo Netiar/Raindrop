@@ -11,7 +11,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.raindrop.ui.Create;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,10 +24,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @BindView(R.id.username)
     EditText mName;
+    @BindView(R.id.email)
+    EditText mEmail;
     @BindView(R.id.password)
     EditText mPassword;
     @BindView(R.id.loginbtn)
     MaterialButton mLoginButton;
+
+    //firebase
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
 
     @Override
@@ -35,24 +45,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mLoginButton.setOnClickListener(this);
 
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
+
 
     }
 
 
     @Override
     public void onClick(View v) {
-        if(TextUtils.isEmpty(mName.getText().toString())){
-            mName.setError("Name is Required");
-        }else if(TextUtils.isEmpty(mPassword.getText().toString())){
-            mPassword.setError("Name is Required");
-        }else {
-            //capture the user input data
-            String name = mName.getText().toString();
-            String password = mPassword.getText().toString();
 
             Intent intent = new Intent(LoginActivity.this, FtActivity.class);
-            intent.putExtra("name", name);
-            intent.putExtra("password", password);
+
 
             startActivity(intent);
         }
@@ -61,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-    }
+
 
 
 
