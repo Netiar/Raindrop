@@ -221,7 +221,4 @@ public class Datum implements Serializable {
         this.odds = odds;
     }
 
-
-
-
 }
