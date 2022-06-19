@@ -18,7 +18,7 @@
         android:fontFamily="@font/black_ops_one"
         android:gravity="center"
         android:text="Sign in"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="35dp"
         android:textStyle="bold" />
 
