@@ -60,7 +60,7 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
 
 
     class MyHolder extends RecyclerView.ViewHolder {
-        TextView homeTeam, awayTeam, competition, federation, results, season;
+        TextView homeTeam, awayTeam, competition, federation, results, season, prediction, status, start_date;
 
 
         public MyHolder(@NonNull View itemView) {
@@ -71,6 +71,9 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
             federation = itemView.findViewById(R.id.federation);
             results = itemView.findViewById(R.id.results);
             season = itemView.findViewById(R.id.season);
+            prediction = itemView.findViewById(R.id.prediction);
+            status = itemView.findViewById(R.id.status);
+            start_date = itemView.findViewById(R.id.start_date);
 
         }
 
@@ -81,6 +84,10 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
             federation.setText(datum.getFederation());
             results.setText(datum.getResult());
             season.setText(datum.getSeason());
+            prediction.setText(datum.getPrediction());
+            status.setText(datum.getStatus());
+            start_date.setText(datum.getStartDate());
+
 
         }
     }
