@@ -24,6 +24,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +44,12 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
         }
 
+
         YoYo.with(Techniques.SlideInDown)
-                .duration(700)
+                .duration(500)
                 .repeat(5)
                 .playOn(findViewById(R.id.textView));
 
     }
+
 }
