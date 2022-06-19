@@ -126,9 +126,9 @@ public class FtActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
        getMenuInflater().inflate(R.menu.menu,menu);
 
-       MenuItem menuItem=menu.findItem(R.id.search);
+       MenuItem menuItem=menu.findItem(R.id.action_search);
        SearchView searchView= (SearchView) menuItem.getActionView();
-       searchView.setQueryHint("Search");
+       searchView.setQueryHint("Search here");
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
@@ -145,11 +145,13 @@ public class FtActivity extends AppCompatActivity {
 
               @Override
               public boolean onQueryTextChange(String newText) {
-                return false;
+                  FtRecyclerViewAdapter adapter = new FtRecyclerViewAdapter(FtActivity.this, data);
+
+                  return false;
               }
          });
 
-      return true ;
+        return super.onCreateOptionsMenu(menu);
     }
 
 
@@ -160,6 +162,10 @@ public class FtActivity extends AppCompatActivity {
 
     private void addToSharedPreferences(String data) {
     }
+
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
