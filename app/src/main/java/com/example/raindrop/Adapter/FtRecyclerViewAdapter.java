@@ -60,7 +60,7 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
 
 
     class MyHolder extends RecyclerView.ViewHolder {
-        TextView homeTeam, awayTeam, competition, federation;
+        TextView homeTeam, awayTeam, competition, federation, results, season;
 
 
         public MyHolder(@NonNull View itemView) {
@@ -69,6 +69,9 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
             awayTeam = itemView.findViewById(R.id.away_team);
             competition = itemView.findViewById(R.id.competition);
             federation = itemView.findViewById(R.id.federation);
+            results = itemView.findViewById(R.id.results);
+            season = itemView.findViewById(R.id.season);
+
         }
 
         public void bindData(Datum datum) {
@@ -76,6 +79,9 @@ public class FtRecyclerViewAdapter extends RecyclerView.Adapter<FtRecyclerViewAd
             awayTeam.setText(datum.getAwayTeam());
             competition.setText(datum.getCompetitionCluster());
             federation.setText(datum.getFederation());
+            results.setText(datum.getResult());
+            season.setText(datum.getSeason());
+
         }
     }
 
