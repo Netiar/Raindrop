@@ -1,6 +1,6 @@
 
 #### <span style="color:white">By</span>
- * Collins O Netia
+ * Collins O. Netia
  
 ## Raindrop
 A football app showing the major football countries and leagues.
