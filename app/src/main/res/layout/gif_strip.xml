@@ -14,8 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:layout_margin="15dp"
             android:fontFamily="@font/black_ops_one"
+            android:layout_margin="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +27,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:fontFamily="@font/black_ops_one"
             app:layout_constraintBottom_toBottomOf="parent"
             app:srcCompat="@drawable/blackfootball" />
 
@@ -35,9 +34,9 @@
         android:id="@+id/federation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/black_ops_one"
         android:layout_margin="15dp"
         android:layout_marginTop="56dp"
-        android:fontFamily="@font/black_ops_one"
         android:layout_marginRight="316dp"
         android:text="TextView"
         app:layout_constraintRight_toRightOf="parent"
@@ -46,9 +45,9 @@
             android:id="@+id/competition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/black_ops_one"
             android:layout_margin="15dp"
             android:text="TextView"
-            android:fontFamily="@font/black_ops_one"
             app:layout_constraintTop_toBottomOf=" @+id/federation"
             app:layout_constraintRight_toRightOf="parent"
              />
@@ -57,9 +56,9 @@
         android:id="@+id/season"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/black_ops_one"
         android:layout_margin="15dp"
         android:text="TextView"
-        android:fontFamily="@font/black_ops_one"
         app:layout_constraintTop_toBottomOf=" @+id/competition"
         app:layout_constraintRight_toRightOf="parent"
         />
@@ -68,9 +67,9 @@
         android:id="@+id/start_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/black_ops_one"
         android:layout_margin="15dp"
         android:text="TextView"
-        android:fontFamily="@font/black_ops_one"
         app:layout_constraintTop_toBottomOf=" @+id/season"
         app:layout_constraintRight_toRightOf="parent"
         />
@@ -79,8 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:fontFamily="@font/black_ops_one"
             android:layout_margin="15dp"
+            android:fontFamily="@font/black_ops_one"
             app:layout_constraintTop_toBottomOf="@id/home_team"
             app:layout_constraintStart_toStartOf="parent"/>
 
