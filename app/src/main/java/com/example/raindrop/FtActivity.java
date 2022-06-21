@@ -155,8 +155,6 @@ public class FtActivity extends AppCompatActivity {
     }
 
 
-
-
     private void getPrediction(String data) {
     }
 
