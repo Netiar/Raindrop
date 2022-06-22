@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void showProgressBar() {
         mSignInProgressBar.setVisibility(View.VISIBLE);
         mLoadingSignUp.setVisibility(View.VISIBLE);
-        mLoadingSignUp.setText("Log in you in");
+        mLoadingSignUp.setText("logging in");
     }
 
     private void hideProgressBar() {
