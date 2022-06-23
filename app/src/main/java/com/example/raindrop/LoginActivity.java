@@ -6,7 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -51,6 +53,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+
+
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
 
@@ -78,10 +84,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mRegisterTextView.setOnClickListener(this);
     }
 
+
+    private void createAuthListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser currentUser  = firebaseAuth.getCurrentUser();
+                if(currentUser != null){
+                    startActivity(new Intent(LoginActivity.this, FtActivity.class));
+                }
+
+            }
+        };
+    }
+
     @Override
     public void onClick(View view){
         if (view == mRegisterTextView) {
-            Intent intent = new Intent(LoginActivity.this, Create.class);
+            Intent intent = new Intent(LoginActivity.this, FtActivity.class);
             startActivity(intent);
             finish();
         }
