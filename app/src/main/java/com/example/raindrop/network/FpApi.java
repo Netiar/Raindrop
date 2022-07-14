@@ -26,6 +26,9 @@ public interface FpApi {
     @GET("predictions?market=classic&iso_date=2018-12-01&federation=UEFA")
     Call<Response> getPrediction();
 
+    @GET("predictions/{id}")
+    Call<Datum> getPredictionById(@Path("id") int id);
+
 
 
 
